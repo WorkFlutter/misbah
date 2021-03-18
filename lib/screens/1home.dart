@@ -12,16 +12,7 @@ class HomePage extends StatelessWidget {
     print(size.height);
     print(size.width);
     return Scaffold(
-      endDrawer: Directionality(
-        textDirection: TextDirection.rtl,
-        child: SizedBox(
-          width: (218 / size.width) * size.width,
-          child: Padding(
-            padding: EdgeInsets.only(top: (80 / size.height) * size.height),
-            child: MyAppDrawer()
-          ),
-        ),
-      ),
+      endDrawer: MyAppDrawer(),
       appBar: MyAppBar(
         widgets: myWidgets(size),
       ),
