@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +13,7 @@ final Shader linearGradient = LinearGradient(
   Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
 );
 
-
-List<Widget> myWidgets(Size size){
+List<Widget> myWidgets(Size size) {
   return [
     SizedBox(
       width: 18,
@@ -38,8 +35,7 @@ List<Widget> myWidgets(Size size){
               CupertinoIcons.search,
               size: 24,
             ),
-            contentPadding:
-            EdgeInsets.symmetric(vertical: 2, horizontal: 12),
+            contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
             hintText: 'البحث',
             hintStyle: TextStyle(fontSize: 12),
             fillColor: Color(0xffF1F1F1),
@@ -69,3 +65,29 @@ List<Widget> myWidgets(Size size){
     )
   ];
 }
+
+List<String> drawerTile = [
+  'الرئيسية',
+  'إعلان جديد',
+  'إعلاناتي',
+  'قائمة المفضلة',
+  'شراء الباقة',
+  'تعديل الملف الشخصي',
+  'اتصل بنا',
+  'من نحن',
+  'مشاركة التطبيق',
+  'تسجيل خروج',
+];
+
+List<String> drawerIcons = [
+  'assets/icons/1.png',
+  'assets/icons/2.png',
+  'assets/icons/3.png',
+  'assets/icons/4.png',
+  'assets/icons/5.png',
+  'assets/icons/6.png',
+  'assets/icons/7.png',
+  'assets/icons/8.png',
+  'assets/icons/9.png',
+  'assets/icons/10.png',
+];

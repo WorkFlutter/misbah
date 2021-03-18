@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         title: 'مسباح',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          fontFamily: 'Arial'
         ),
         home: Splash(),
       ),
