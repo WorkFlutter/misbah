@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:misbah/screens/1home.dart';
+import 'package:misbah/screens/2msabih.dart';
+import 'package:misbah/screens/3advertise.dart';
+import 'package:misbah/widgets/3adertise_widget.dart';
 
 import 'screens/0splash.dart';
 
@@ -24,10 +27,7 @@ class MyApp extends StatelessWidget {
       home: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'مسباح',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          fontFamily: 'Arial'
-        ),
+        theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Arial'),
         home: Splash(),
       ),
     );

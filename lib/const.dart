@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 
 final Shader linearGradient = LinearGradient(
   colors: <Color>[
-    Color(0xff056092),
-    Color(0xff065D8E),
-    Color(0xff055482),
-    Color(0xff044770),
+    Color(0xff135285),
+    Color(0xff135285),
     Color(0xff022B4B),
   ],
 ).createShader(
@@ -91,3 +89,4 @@ List<String> drawerIcons = [
   'assets/icons/9.png',
   'assets/icons/10.png',
 ];
+enum misbahtype { misbah, ring, accessory, stones }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:misbah/screens/1home.dart';
 
 class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   List<Widget> widgets;
-
-  MyAppBar({this.widgets});
+  String title;
+  MyAppBar({this.widgets, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,30 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
       height: 120,
       padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top - 1),
       child: widgets == null
-          ? Container()
+          ? Container(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: GestureDetector(
+                      child: Image.asset(
+                        'assets/icons/back.png',
+                      ),
+                      onTap: () {
+                        Get.back();
+                      },
+                    ),
+                  )
+                ],
+              ),
+            )
           : Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: widgets,
