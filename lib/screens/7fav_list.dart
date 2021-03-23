@@ -1,18 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:misbah/screens/4ad_details.dart';
 import 'package:misbah/widgets/0app_bar.dart';
 import 'package:misbah/widgets/3adertise_widget.dart';
+import 'package:misbah/screens/4ad_details.dart';
 
-class Advertise extends StatelessWidget {
+class FavoriteList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xffF7F7F7),
       appBar: MyAppBar(
-        title: 'المسابيح الطبيعية ',
+        title: 'قائمة المفضلة ',
       ),
       body: Container(
         width: double.infinity,

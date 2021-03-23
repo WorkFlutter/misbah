@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:misbah/widgets/0app_bar.dart';
-import 'package:misbah/widgets/6drop_menu.dart';
+import 'package:misbah/widgets/6text_field.dart';
+import 'package:misbah/widgets/7drop_menu.dart';
 
 class NewAdd extends StatefulWidget {
   @override
@@ -176,42 +177,13 @@ class _NewAddState extends State<NewAdd> {
               SizedBox(
                 height: 8,
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
-                child: Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: SizedBox(
-                    height: 45 / size.height * size.height,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'العنوان',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
-                child: Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: SizedBox(
-                    height: 45 / size.height * size.height,
-                    child: DropMenu(
-                      title: 'القسم',
-                      onChanged: (d) {
-                        dropdownValue = d;
-                      },
-                      dropValue: 'dd',
-                      myMenu: ['dd', 'ds', 'da'],
-                    ),
-                  ),
-                ),
-              ),
+              MyTextField(label: 'العنوان',),
+              DropMenu(myMenu: ['select','test 1', 'test 2'],title: 'القسم',dropValue: 'select',onChanged: (){},),
+              DropMenu(myMenu: ['select','test 1', 'test 2'],title: 'النوع',dropValue: 'select',onChanged: (){},),
+              MyTextField(label: 'الوصف',minlines: 3,),
+              DropMenu(myMenu: ['select','test 1', 'test 2'],title: 'العملة',dropValue: 'select',onChanged: (){},),
+              MyTextField(label: 'السعر',),
+
             ],
           ),
         ),

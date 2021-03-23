@@ -20,7 +20,7 @@ class GradientButton extends StatelessWidget {
             child: Text(
               label,
               style: TextStyle(
-                color:gradient? Colors.white: Color(0xff013668),
+                color: gradient ? Colors.white : Color(0xff013668),
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -29,7 +29,7 @@ class GradientButton extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           color: gradient ? null : Colors.white,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(5),
           boxShadow: [
             BoxShadow(
               color: Colors.grey[500],
@@ -37,15 +37,17 @@ class GradientButton extends StatelessWidget {
               blurRadius: 1.5,
             ),
           ],
-          gradient: gradient? LinearGradient(
-            colors: [
-              Color(0xff135285),
-              Color(0xff135285),
-              Color(0xff022B4B),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ) : null,
+          gradient: gradient
+              ? LinearGradient(
+                  colors: [
+                    Color(0xff135285),
+                    Color(0xff135285),
+                    Color(0xff022B4B),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                )
+              : null,
         ),
       ),
     );

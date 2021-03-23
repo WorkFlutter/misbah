@@ -28,8 +28,6 @@ class _HomePageState extends State<HomePage> {
     'assets/images/homeimage.png',
   ];
 
-
-
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -70,7 +68,6 @@ class _HomePageState extends State<HomePage> {
                     decorator: DotsDecorator(
                       color: Color(0xffBCA8A8), // Inactive color
                       activeColor: Color(0xff044770),
-
                     ),
                   ),
                   Container(
@@ -132,7 +129,9 @@ class _HomePageState extends State<HomePage> {
                                 label: 'أحجار كريمة',
                               ),
                             ),
-                            onTap: () {},
+                            onTap: () {
+                              Get.to(Advertise());
+                            },
                           ),
                         ),
                       ],

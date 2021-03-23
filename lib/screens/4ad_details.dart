@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:misbah/widgets/0app_bar.dart';
 import 'package:misbah/widgets/3adertise_widget.dart';
-import 'package:misbah/widgets/4gradient_button.dart';
+import 'package:misbah/widgets/5gradient_button.dart';
 
 class AdvertiseDetails extends StatelessWidget {
   @override

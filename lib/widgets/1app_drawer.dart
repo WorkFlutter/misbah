@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:misbah/const.dart';
 import 'package:misbah/screens/5new_ad.dart';
+import 'package:misbah/screens/6my_ads.dart';
+import 'package:misbah/screens/7fav_list.dart';
+import 'package:misbah/screens/8buy_backage.dart';
 
 class MyAppDrawer extends StatelessWidget {
   @override
@@ -55,12 +58,36 @@ class MyAppDrawer extends StatelessWidget {
                       physics: NeverScrollableScrollPhysics(),
                       children: [
                         builTile(icon: drawerIcons[0], label: drawerTile[0]),
-                        builTile(icon: drawerIcons[1], label: drawerTile[1], onTap: (){
-                          Get.to(NewAdd());
-                        }),
-                        builTile(icon: drawerIcons[2], label: drawerTile[2]),
-                        builTile(icon: drawerIcons[3], label: drawerTile[3]),
-                        builTile(icon: drawerIcons[4], label: drawerTile[4]),
+                        builTile(
+                            icon: drawerIcons[1],
+                            label: drawerTile[1],
+                            onTap: () {
+                              Get.to(NewAdd());
+                            }),
+                        builTile(
+                            icon: drawerIcons[2],
+                            label: drawerTile[2],
+                            onTap: () {
+                              Get.to(
+                                MyAdvertise(),
+                              );
+                            }),
+                        builTile(
+                            icon: drawerIcons[3],
+                            label: drawerTile[3],
+                            onTap: () {
+                              Get.to(
+                                FavoriteList(),
+                              );
+                            }),
+                        builTile(
+                            icon: drawerIcons[4],
+                            label: drawerTile[4],
+                            onTap: () {
+                              Get.to(
+                                BuyBackage(),
+                              );
+                            }),
                         builTile(icon: drawerIcons[5], label: drawerTile[5]),
                         builTile(icon: drawerIcons[6], label: drawerTile[6]),
                         builTile(icon: drawerIcons[7], label: drawerTile[7]),
