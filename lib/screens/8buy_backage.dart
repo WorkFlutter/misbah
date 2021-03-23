@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:misbah/widgets/0app_bar.dart';
 import 'package:misbah/widgets/5gradient_button.dart';
 import 'package:misbah/widgets/8buybackage_widget.dart';
@@ -128,20 +129,55 @@ class BuyBackage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 16,
               ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Center(
-                  child: Container(
-                    width: size.width - 200,
-                    height: size.height - 640,
-                    child: GradientButton(
-                      label: 'ادفع',
-                      onTap: () {},
-                    ),
+              Center(
+                child: SizedBox(
+                  width: 240 / size.width * size.width,
+                  height: 48 / size.height * size.height,
+                  child: GradientButton(
+                    label: 'ادفع',
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: Icon(
+                            CupertinoIcons.checkmark_circle_fill,
+                            color: Colors.green,
+                            size: 62,
+                          ),
+                          content: Text(
+                            'تم شراء الباقة والدفع بنجاح',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Color(0xff346879), fontSize: 26),
+                          ),
+                          actions: [
+                            Container(),
+                            Center(
+                              child: SizedBox(
+                                width: 240 / size.width * size.width,
+                                height: 48 / size.height * size.height,
+                                child: GradientButton(
+                                  label: 'تم',
+                                  onTap: () {
+                                    Get.back();
+                                  },
+                                ),
+                              ),
+                            ),
+                            Container(),
+                            Container(),
+                            Container(),
+                          ],
+                        ),
+                      );
+                    },
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 16,
               ),
             ],
           ),

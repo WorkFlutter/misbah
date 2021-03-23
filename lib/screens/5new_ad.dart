@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:misbah/widgets/0app_bar.dart';
+import 'package:misbah/widgets/5gradient_button.dart';
 import 'package:misbah/widgets/6text_field.dart';
 import 'package:misbah/widgets/7drop_menu.dart';
 
@@ -177,13 +178,66 @@ class _NewAddState extends State<NewAdd> {
               SizedBox(
                 height: 8,
               ),
-              MyTextField(label: 'العنوان',),
-              DropMenu(myMenu: ['select','test 1', 'test 2'],title: 'القسم',dropValue: 'select',onChanged: (){},),
-              DropMenu(myMenu: ['select','test 1', 'test 2'],title: 'النوع',dropValue: 'select',onChanged: (){},),
-              MyTextField(label: 'الوصف',minlines: 3,),
-              DropMenu(myMenu: ['select','test 1', 'test 2'],title: 'العملة',dropValue: 'select',onChanged: (){},),
-              MyTextField(label: 'السعر',),
-
+              MyTextField(
+                label: 'العنوان',
+              ),
+              DropMenu(
+                myMenu: ['select', 'test 1', 'test 2'],
+                title: 'القسم',
+                dropValue: 'select',
+                onChanged: () {},
+              ),
+              DropMenu(
+                myMenu: ['select', 'test 1', 'test 2'],
+                title: 'النوع',
+                dropValue: 'select',
+                onChanged: () {},
+              ),
+              MyTextField(
+                label: 'الوصف',
+                minlines: 3,
+              ),
+              DropMenu(
+                myMenu: ['select', 'test 1', 'test 2'],
+                title: 'العملة',
+                dropValue: 'select',
+                onChanged: () {},
+              ),
+              MyTextField(
+                label: 'السعر',
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Center(
+                child: SizedBox(
+                  width: 240 / size.width * size.width,
+                  height: 48 / size.height * size.height,
+                  child: GradientButton(
+                    label: 'التالي',
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: Icon(
+                            CupertinoIcons.checkmark_circle_fill,
+                            color: Colors.green,
+                            size: 62,
+                          ),
+                          content: Text(
+                            'تم الرفع بنجاح',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Color(0xff346879),fontSize: 26),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
             ],
           ),
         ),
