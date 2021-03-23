@@ -26,6 +26,7 @@ class BuyBackage extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
+                    childAspectRatio: 1,
                   ),
 
                   //scrollDirection: Axis.vertical,

@@ -63,30 +63,28 @@ class MyAppDrawer extends StatelessWidget {
                             label: drawerTile[1],
                             onTap: () {
                               Get.to(NewAdd());
+                              Navigator.pop(context);
                             }),
                         builTile(
                             icon: drawerIcons[2],
                             label: drawerTile[2],
                             onTap: () {
-                              Get.to(
-                                MyAdvertise(),
-                              );
+                              Get.to(MyAdvertise());
+                              Navigator.pop(context);
                             }),
                         builTile(
                             icon: drawerIcons[3],
                             label: drawerTile[3],
                             onTap: () {
-                              Get.to(
-                                FavoriteList(),
-                              );
+                              Get.to(FavoriteList());
+                              Navigator.pop(context);
                             }),
                         builTile(
                             icon: drawerIcons[4],
                             label: drawerTile[4],
                             onTap: () {
-                              Get.to(
-                                BuyBackage(),
-                              );
+                              Get.to(BuyBackage());
+                              Navigator.pop(context);
                             }),
                         builTile(icon: drawerIcons[5], label: drawerTile[5]),
                         builTile(icon: drawerIcons[6], label: drawerTile[6]),

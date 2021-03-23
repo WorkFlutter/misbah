@@ -24,8 +24,8 @@ class Buybackagewidget extends StatelessWidget {
           )
         ],
       ),
-      width: size.width - 270,
-      height: size.height - 150,
+      width: 144/size.width * size.width,
+      height: 144/size.height * size.height,
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         //crossAxisAlignment: CrossAxisAlignment.center,
