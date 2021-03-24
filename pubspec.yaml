@@ -23,6 +23,8 @@ dependencies:
   get: ^3.26.0
   carousel_pro: ^1.0.0
   dashed_container:
+  share: ^2.0.1
+  url_launcher: ^6.0.2
 
 dev_dependencies:
   flutter_test:

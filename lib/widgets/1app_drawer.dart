@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:misbah/const.dart';
@@ -5,8 +6,41 @@ import 'package:misbah/screens/5new_ad.dart';
 import 'package:misbah/screens/6my_ads.dart';
 import 'package:misbah/screens/7fav_list.dart';
 import 'package:misbah/screens/8buy_backage.dart';
+import 'package:misbah/screens/9contact_us.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyAppDrawer extends StatelessWidget {
+  final Uri _url = Uri(
+    scheme: 'fb',
+    host: 'www.facebook.com',
+
+  );
+  final Uri _urlW = Uri(
+    scheme: 'whatsapp',
+  );
+  // final Uri _urlSNAP = Uri(
+  //   scheme: 'snapchat',
+  //   host: 'www.snapchat.com',
+  //
+  // );
+  // final Uri _urlinsta= Uri(
+  //   scheme: 'instagram',
+  //   host: 'instagram.com',
+  //
+  // );
+  void _launchURL() async => await canLaunch(_url.toString())
+      ? await launch(_url.toString())
+      : throw 'Could not launch $_url';
+  void _launchW() async => await canLaunch(_urlW.toString())
+      ? await launch(_urlW.toString())
+      : throw 'Could not launch $_urlW';
+  // void _launchSNAP() async => await canLaunch(_urlSNAP.toString())
+  //     ? await launch(_urlSNAP.toString())
+  //     : throw 'Could not launch $_urlSNAP';
+  //
+  // void _launchinsta() async => await canLaunch(_urlinsta.toString())
+  //     ? await launch(_urlinsta.toString())
+  //     : throw 'Could not launch $_urlinsta';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -87,9 +121,70 @@ class MyAppDrawer extends StatelessWidget {
                               Navigator.pop(context);
                             }),
                         builTile(icon: drawerIcons[5], label: drawerTile[5]),
-                        builTile(icon: drawerIcons[6], label: drawerTile[6]),
+                        builTile(icon: drawerIcons[6], label: drawerTile[6],
+                        onTap: (){
+                          Get.to(ContactUs());
+                        }),
                         builTile(icon: drawerIcons[7], label: drawerTile[7]),
-                        builTile(icon: drawerIcons[8], label: drawerTile[8]),
+                        builTile(
+                          icon: drawerIcons[8],
+                          label: drawerTile[8],
+                          onTap: () {
+                            showModalBottomSheet(
+                              backgroundColor: Colors.transparent,
+                              context: context,
+                              builder: (context) => ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(40),
+                                  topRight: Radius.circular(40),
+                                ),
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 192 / size.height * size.height,
+                                  color: Colors.white,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Image.asset('assets/icons/twitt.png'),
+                                          GestureDetector(
+
+                                            child: Image.asset(
+                                                'assets/icons/insta.png'),
+                                          ),
+                                          GestureDetector(
+                                            onTap: (){
+                                              _launchURL();
+                                              print(_url);
+                                            },
+                                            child: Image.asset(
+                                                'assets/icons/face.png'),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          GestureDetector(
+
+                                              child: Image.asset('assets/icons/snap.png')),
+                                          GestureDetector(
+                                              onTap: _launchW,
+                                              child: Image.asset('assets/icons/whats.png')),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                         builTile(icon: drawerIcons[9], label: drawerTile[9]),
                       ],
                     ),
