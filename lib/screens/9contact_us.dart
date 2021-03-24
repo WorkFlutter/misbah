@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:misbah/widgets/0app_bar.dart';
 import 'package:misbah/widgets/5gradient_button.dart';
 
@@ -81,6 +82,49 @@ class ContactUs extends StatelessWidget {
                                     height: 50 / size.height * size.height,
                                     child: GradientButton(
                                       label: 'إرسال',
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) => AlertDialog(
+                                            title: Icon(
+                                              CupertinoIcons
+                                                  .checkmark_circle_fill,
+                                              color: Colors.green,
+                                              size: 62,
+                                            ),
+                                            content: Text(
+                                              'تم الإرسال بنجاح',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: Color(0xff346879),
+                                                  fontSize: 26),
+                                            ),
+                                            actions: [
+                                              Container(),
+                                              Center(
+                                                child: SizedBox(
+                                                  width: 240 /
+                                                      size.width *
+                                                      size.width,
+                                                  height: 48 /
+                                                      size.height *
+                                                      size.height,
+                                                  child: GradientButton(
+                                                    label: 'تم',
+                                                    onTap: () {
+                                                      Get.back();
+                                                    },
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(),
+                                              Container(),
+                                              Container(),
+                                            ],
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ),
                                   SizedBox(

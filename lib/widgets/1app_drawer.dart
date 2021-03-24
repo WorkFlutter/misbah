@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:misbah/const.dart';
+import 'package:misbah/screens/10about.dart';
 import 'package:misbah/screens/5new_ad.dart';
 import 'package:misbah/screens/6my_ads.dart';
 import 'package:misbah/screens/7fav_list.dart';
@@ -13,11 +14,11 @@ class MyAppDrawer extends StatelessWidget {
   final Uri _url = Uri(
     scheme: 'fb',
     host: 'www.facebook.com',
-
   );
   final Uri _urlW = Uri(
     scheme: 'whatsapp',
   );
+
   // final Uri _urlSNAP = Uri(
   //   scheme: 'snapchat',
   //   host: 'www.snapchat.com',
@@ -31,9 +32,11 @@ class MyAppDrawer extends StatelessWidget {
   void _launchURL() async => await canLaunch(_url.toString())
       ? await launch(_url.toString())
       : throw 'Could not launch $_url';
+
   void _launchW() async => await canLaunch(_urlW.toString())
       ? await launch(_urlW.toString())
       : throw 'Could not launch $_urlW';
+
   // void _launchSNAP() async => await canLaunch(_urlSNAP.toString())
   //     ? await launch(_urlSNAP.toString())
   //     : throw 'Could not launch $_urlSNAP';
@@ -121,11 +124,18 @@ class MyAppDrawer extends StatelessWidget {
                               Navigator.pop(context);
                             }),
                         builTile(icon: drawerIcons[5], label: drawerTile[5]),
-                        builTile(icon: drawerIcons[6], label: drawerTile[6],
-                        onTap: (){
-                          Get.to(ContactUs());
-                        }),
-                        builTile(icon: drawerIcons[7], label: drawerTile[7]),
+                        builTile(
+                            icon: drawerIcons[6],
+                            label: drawerTile[6],
+                            onTap: () {
+                              Get.to(ContactUs());
+                            }),
+                        builTile(
+                            icon: drawerIcons[7],
+                            label: drawerTile[7],
+                            onTap: () {
+                              Get.to(AboutUs());
+                            }),
                         builTile(
                           icon: drawerIcons[8],
                           label: drawerTile[8],
@@ -152,12 +162,11 @@ class MyAppDrawer extends StatelessWidget {
                                         children: [
                                           Image.asset('assets/icons/twitt.png'),
                                           GestureDetector(
-
                                             child: Image.asset(
                                                 'assets/icons/insta.png'),
                                           ),
                                           GestureDetector(
-                                            onTap: (){
+                                            onTap: () {
                                               _launchURL();
                                               print(_url);
                                             },
@@ -171,11 +180,12 @@ class MyAppDrawer extends StatelessWidget {
                                             MainAxisAlignment.spaceEvenly,
                                         children: [
                                           GestureDetector(
-
-                                              child: Image.asset('assets/icons/snap.png')),
+                                              child: Image.asset(
+                                                  'assets/icons/snap.png')),
                                           GestureDetector(
                                               onTap: _launchW,
-                                              child: Image.asset('assets/icons/whats.png')),
+                                              child: Image.asset(
+                                                  'assets/icons/whats.png')),
                                         ],
                                       ),
                                     ],
