@@ -5,7 +5,9 @@ import 'package:misbah/screens/1home.dart';
 class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   List<Widget> widgets;
   String title;
-  MyAppBar({this.widgets, this.title});
+  String image;
+  Function onTap;
+  MyAppBar({this.widgets, this.title, this.image, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +29,13 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
                   Container(
                     alignment: Alignment.centerRight,
                     child: GestureDetector(
-                      child: Image.asset(
-                        'assets/icons/back.png',
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          image,
+                        ),
                       ),
-                      onTap: () {
-                        Get.back();
-                      },
+                      onTap: onTap,
                     ),
                   )
                 ],

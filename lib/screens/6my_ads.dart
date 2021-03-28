@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:misbah/widgets/0app_bar.dart';
 
 class MyAdvertise extends StatelessWidget {
@@ -11,6 +12,10 @@ class MyAdvertise extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         title: 'إعلاناتي',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: Padding(
         padding: const EdgeInsets.all(25),

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:misbah/screens/14login.dart';
 
 final Shader linearGradient = LinearGradient(
   colors: <Color>[
@@ -16,9 +18,14 @@ List<Widget> myWidgets(Size size) {
     SizedBox(
       width: 18,
     ),
-    Image.asset('assets/icons/add.png'),
+    GestureDetector(
+      child: Image.asset('assets/icons/add.png'),
+      onTap: () {
+        Get.to(Login());
+      },
+    ),
     SizedBox(
-      width: 5,
+      width: 5 / size.width * size.width,
     ),
     SizedBox(
       width: 245 / 360 * size.width,

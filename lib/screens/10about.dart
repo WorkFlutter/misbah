@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:misbah/widgets/0app_bar.dart';
 
 class AboutUs extends StatelessWidget {
@@ -8,6 +9,10 @@ class AboutUs extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         title: 'من نحن',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: Container(
         width: double.infinity,

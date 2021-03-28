@@ -89,7 +89,9 @@ class _HomePageState extends State<HomePage> {
                                 label: 'قطع غيار واكسسوارات',
                               ),
                             ),
-                            onTap: () {},
+                            onTap: () {
+                              Get.to(Advertise());
+                            },
                           ),
                         ),
                         Padding(

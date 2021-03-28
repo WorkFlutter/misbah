@@ -14,15 +14,20 @@ class BuyBackage extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         title: 'شراء الباقة',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: ListView(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
+              //290
               Container(
                 width: double.infinity,
-                height: size.height - 290,
+                height: 420 / size.height * size.height,
                 child: GridView(
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -108,28 +113,32 @@ class BuyBackage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 8),
-                    child: GestureDetector(
-                      child: CriditCardWidget(
-                        image: 'assets/images/visa.png',
-                        label: 'فيزا/ماستر',
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 45.0, right: 8),
+                      child: GestureDetector(
+                        child: CriditCardWidget(
+                          image: 'assets/images/visa.png',
+                          label: 'فيزا/ماستر',
+                        ),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 8),
-                    child: GestureDetector(
-                      child: CriditCardWidget(
-                        image: 'assets/images/knet.png',
-                        label: 'كي نت',
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8),
+                      child: GestureDetector(
+                        child: CriditCardWidget(
+                          image: 'assets/images/knet.png',
+                          label: 'كي نت',
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 16,
+                height: 16 / size.height * size.height,
               ),
               Center(
                 child: SizedBox(
@@ -141,16 +150,16 @@ class BuyBackage extends StatelessWidget {
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Icon(
-                            CupertinoIcons.checkmark_circle_fill,
-                            color: Colors.green,
-                            size: 62,
-                          ),
+                          title: Container(
+                              width: 62 / size.width * size.width,
+                              height: 62 / size.height * size.height,
+                              child:
+                                  Image.asset('assets/images/greenicon.png')),
                           content: Text(
                             'تم شراء الباقة والدفع بنجاح',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                color: Color(0xff346879), fontSize: 26),
+                                color: Color(0xff013668), fontSize: 26),
                           ),
                           actions: [
                             Container(),
@@ -177,10 +186,10 @@ class BuyBackage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 16,
+                height: 166 / size.height * size.height,
               ),
             ],
-          ),
+          )
         ],
       ),
     );

@@ -12,6 +12,10 @@ class ContactUs extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: MyAppBar(
         title: 'اتصل بنا',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: Container(
         width: double.infinity,
@@ -87,17 +91,20 @@ class ContactUs extends StatelessWidget {
                                         showDialog(
                                           context: context,
                                           builder: (context) => AlertDialog(
-                                            title: Icon(
-                                              CupertinoIcons
-                                                  .checkmark_circle_fill,
-                                              color: Colors.green,
-                                              size: 62,
-                                            ),
+                                            title: Container(
+                                                width: 62 /
+                                                    size.width *
+                                                    size.width,
+                                                height: 62 /
+                                                    size.height *
+                                                    size.height,
+                                                child: Image.asset(
+                                                    'assets/images/greenicon.png')),
                                             content: Text(
                                               'تم الإرسال بنجاح',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
-                                                  color: Color(0xff346879),
+                                                  color: Color(0xff232323),
                                                   fontSize: 26),
                                             ),
                                             actions: [
@@ -154,7 +161,7 @@ class ContactUs extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 20 / size.height * size.height,
                     ),
                     Text('الشروط والأحكام')
                   ],

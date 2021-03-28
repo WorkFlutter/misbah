@@ -9,6 +9,9 @@ import 'package:misbah/screens/7fav_list.dart';
 import 'package:misbah/screens/8buy_backage.dart';
 import 'package:misbah/screens/9contact_us.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:misbah/screens/11edit_profile.dart';
+import 'package:misbah/screens/1home.dart';
+import 'package:misbah/widgets/11logout_widget.dart';
 
 class MyAppDrawer extends StatelessWidget {
   final Uri _url = Uri(
@@ -67,7 +70,7 @@ class MyAppDrawer extends StatelessWidget {
                       backgroundImage: AssetImage("assets/images/profile.png"),
                     ),
                     accountName: Text(
-                      "محمد خليفة",
+                      " اسم المستخدم",
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
@@ -94,36 +97,45 @@ class MyAppDrawer extends StatelessWidget {
                     child: ListView(
                       physics: NeverScrollableScrollPhysics(),
                       children: [
-                        builTile(icon: drawerIcons[0], label: drawerTile[0]),
+                        builTile(
+                          icon: drawerIcons[0],
+                          label: drawerTile[0],
+                          onTap: () {
+                            Get.back();
+                          },
+                        ),
                         builTile(
                             icon: drawerIcons[1],
                             label: drawerTile[1],
                             onTap: () {
                               Get.to(NewAdd());
-                              Navigator.pop(context);
                             }),
                         builTile(
                             icon: drawerIcons[2],
                             label: drawerTile[2],
                             onTap: () {
                               Get.to(MyAdvertise());
-                              Navigator.pop(context);
                             }),
                         builTile(
                             icon: drawerIcons[3],
                             label: drawerTile[3],
                             onTap: () {
                               Get.to(FavoriteList());
-                              Navigator.pop(context);
                             }),
                         builTile(
                             icon: drawerIcons[4],
                             label: drawerTile[4],
                             onTap: () {
                               Get.to(BuyBackage());
-                              Navigator.pop(context);
                             }),
-                        builTile(icon: drawerIcons[5], label: drawerTile[5]),
+                        builTile(
+                            icon: drawerIcons[5],
+                            label: drawerTile[5],
+                            onTap: () {
+                              Get.to(
+                                EditProfile(),
+                              );
+                            }),
                         builTile(
                             icon: drawerIcons[6],
                             label: drawerTile[6],
@@ -195,7 +207,15 @@ class MyAppDrawer extends StatelessWidget {
                             );
                           },
                         ),
-                        builTile(icon: drawerIcons[9], label: drawerTile[9]),
+                        builTile(
+                            icon: drawerIcons[9],
+                            label: drawerTile[9],
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => LogoutWidget(),
+                              );
+                            }),
                       ],
                     ),
                   )

@@ -13,6 +13,10 @@ class Advertise extends StatelessWidget {
       backgroundColor: Color(0xffF7F7F7),
       appBar: MyAppBar(
         title: 'المسابيح الطبيعية ',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: Container(
         width: double.infinity,
@@ -21,7 +25,7 @@ class Advertise extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: [
             SizedBox(
-              height: 8,
+              height: 8 / size.height * size.height,
             ),
             Advertisewidgit(
               advertiseName: 'مسابيح',

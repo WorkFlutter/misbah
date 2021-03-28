@@ -8,10 +8,16 @@ import 'package:misbah/screens/4ad_details.dart';
 class FavoriteList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Color(0xffF7F7F7),
       appBar: MyAppBar(
         title: 'قائمة المفضلة ',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: Container(
         width: double.infinity,
@@ -20,7 +26,7 @@ class FavoriteList extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: [
             SizedBox(
-              height: 8,
+              height: 15 / size.height * size.height,
             ),
             Advertisewidgit(
               advertiseName: 'مسابيح',

@@ -12,6 +12,10 @@ class Msabih extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         title: 'المسابيح',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: Padding(
         padding: const EdgeInsets.all(50),

@@ -6,7 +6,9 @@ class Buybackagewidget extends StatelessWidget {
   String price;
   String duration;
   String adNum;
+
   Buybackagewidget({this.label, this.adNum, this.duration, this.price});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -24,11 +26,9 @@ class Buybackagewidget extends StatelessWidget {
           )
         ],
       ),
-      width: 144/size.width * size.width,
-      height: 144/size.height * size.height,
+      width: 144 / size.width * size.width,
+      height: 144 / size.height * size.height,
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 15),
@@ -62,14 +62,16 @@ class Buybackagewidget extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 0),
-            child: Text(
-              duration,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 12,
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+            child: FittedBox(
+              child: Text(
+                duration,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    letterSpacing: 1.5,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ],

@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:misbah/widgets/0app_bar.dart';
 import 'package:misbah/widgets/3adertise_widget.dart';
 import 'package:misbah/widgets/5gradient_button.dart';
@@ -12,6 +13,10 @@ class AdvertiseDetails extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         title: 'تفاصيل الإعلان',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -22,7 +27,10 @@ class AdvertiseDetails extends StatelessWidget {
               child: Center(
                 child: Stack(
                   children: [
-                    Image.asset('assets/images/sibha.png',fit: BoxFit.cover,),
+                    Image.asset(
+                      'assets/images/sibha.png',
+                      fit: BoxFit.cover,
+                    ),
                     Positioned(
                       right: 10,
                       top: 5,
@@ -37,7 +45,7 @@ class AdvertiseDetails extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 5 / size.height * size.height,
             ),
             Center(
               child: DotsIndicator(
@@ -55,7 +63,7 @@ class AdvertiseDetails extends StatelessWidget {
               viwes: '500',
             ),
             SizedBox(
-              height: 12,
+              height: 12 / size.height * size.height,
             ),
             Padding(
               padding: EdgeInsets.only(left: 15, right: 15),
@@ -65,7 +73,7 @@ class AdvertiseDetails extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 12,
+              height: 12 / size.height * size.height,
             ),
             Padding(
               padding: EdgeInsets.only(left: 15, right: 15),
@@ -94,9 +102,18 @@ class AdvertiseDetails extends StatelessWidget {
               padding: const EdgeInsets.all(25),
               child: Row(
                 children: [
-                  Expanded(child: GradientButton(label: 'SMS',gradient: false,)),
-                  SizedBox(width: 6,),
-                  Expanded(child: GradientButton(label: 'اتصل الآن',)),
+                  Expanded(
+                      child: GradientButton(
+                    label: 'SMS',
+                    gradient: false,
+                  )),
+                  SizedBox(
+                    width: 6,
+                  ),
+                  Expanded(
+                      child: GradientButton(
+                    label: 'اتصل الآن',
+                  )),
                 ],
               ),
             )

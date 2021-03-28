@@ -2,6 +2,7 @@ import 'package:dashed_container/dashed_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:get/get.dart';
 import 'package:misbah/widgets/0app_bar.dart';
 import 'package:misbah/widgets/5gradient_button.dart';
 import 'package:misbah/widgets/6text_field.dart';
@@ -24,6 +25,10 @@ class _NewAddState extends State<NewAdd> {
     return Scaffold(
       appBar: MyAppBar(
         title: 'إعلان جديد',
+        image: 'assets/icons/back.png',
+        onTap: () {
+          Get.back();
+        },
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -86,9 +91,7 @@ class _NewAddState extends State<NewAdd> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 8 / size.height * size.height),
               Row(
                 textDirection: TextDirection.rtl,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -166,7 +169,7 @@ class _NewAddState extends State<NewAdd> {
                 ],
               ),
               SizedBox(
-                height: 12,
+                height: 12 / size.height * size.height,
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 33),
@@ -176,7 +179,7 @@ class _NewAddState extends State<NewAdd> {
                 ),
               ),
               SizedBox(
-                height: 8,
+                height: 8 / size.height * size.height,
               ),
               MyTextField(
                 label: 'العنوان',
@@ -207,7 +210,7 @@ class _NewAddState extends State<NewAdd> {
                 label: 'السعر',
               ),
               SizedBox(
-                height: 16,
+                height: 16 / size.height * size.height,
               ),
               Center(
                 child: SizedBox(
@@ -219,15 +222,16 @@ class _NewAddState extends State<NewAdd> {
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Icon(
-                            CupertinoIcons.checkmark_circle_fill,
-                            color: Colors.green,
-                            size: 62,
-                          ),
+                          title: Container(
+                              width: 62 / size.width * size.width,
+                              height: 62 / size.height * size.height,
+                              child:
+                                  Image.asset('assets/images/greenicon.png')),
                           content: Text(
                             'تم الرفع بنجاح',
                             textAlign: TextAlign.center,
-                            style: TextStyle(color: Color(0xff346879),fontSize: 26),
+                            style: TextStyle(
+                                color: Color(0xff346879), fontSize: 26),
                           ),
                         ),
                       );
@@ -236,7 +240,7 @@ class _NewAddState extends State<NewAdd> {
                 ),
               ),
               SizedBox(
-                height: 16,
+                height: 16 / size.height * size.height,
               ),
             ],
           ),
