@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../widgets/0app_bar.dart';
 import 'package:misbah/widgets/10customtextfield.dart';
 
+import '../widgets/0app_bar.dart';
 import '../widgets/5gradient_button.dart';
 
 class NewUser extends StatefulWidget {
@@ -133,43 +132,50 @@ class _NewUserState extends State<NewUser> {
                         onTap: () {
                           showDialog(
                             context: context,
-                            builder: (context) => AlertDialog(
-                              title: Container(
-                                color: Color(0xff707070),
-                                width: double.infinity,
-                                height: 37 / size.height * size.height,
-                                child: Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 90, right: 20),
-                                      child: Text(
-                                        'الشروط والأحكام',
-                                        style: TextStyle(
-                                            color: Color(0xff3B3A3A),
-                                            fontSize: 19),
-                                      ),
+                            builder: (context) => Dialog(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    color: Color(0xff707070),
+                                    width: double.infinity,
+                                    height: 37 / size.height * size.height,
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 90, right: 20),
+                                          child: FittedBox(
+                                            child: Text(
+                                              'الشروط والأحكام',
+                                              style: TextStyle(
+                                                  color: Color(0xff3B3A3A),
+                                                  fontSize: 19),
+                                            ),
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          child: Image.asset(
+                                            'assets/images/close.png',
+                                          ),
+                                          onTap: () {
+                                            Get.back();
+                                          },
+                                        )
+                                      ],
                                     ),
-                                    GestureDetector(
-                                      child: Image.asset(
-                                        'assets/images/close.png',
-                                      ),
-                                      onTap: () {
-                                        Get.back();
-                                      },
-                                    )
-                                  ],
-                                ),
-                              ),
-                              content: Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 15, right: 15),
-                                child: Text(
-                                  cond,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Color(0xff0F1010), fontSize: 14),
-                                ),
+                                  ),
+                                  Padding(
+                                    padding:  EdgeInsets.symmetric(
+                                     horizontal: 20,vertical: 30),
+                                    child: Text(
+                                      cond,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Color(0xff0F1010),
+                                          fontSize: 14),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           );

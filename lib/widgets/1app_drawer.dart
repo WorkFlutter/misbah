@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:misbah/const.dart';
 import 'package:misbah/screens/10about.dart';
+import 'package:misbah/screens/11edit_profile.dart';
 import 'package:misbah/screens/5new_ad.dart';
 import 'package:misbah/screens/6my_ads.dart';
 import 'package:misbah/screens/7fav_list.dart';
 import 'package:misbah/screens/8buy_backage.dart';
 import 'package:misbah/screens/9contact_us.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:misbah/screens/11edit_profile.dart';
-import 'package:misbah/screens/1home.dart';
+import 'package:misbah/widgets/0app_bar.dart';
 import 'package:misbah/widgets/11logout_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyAppDrawer extends StatelessWidget {
   final Uri _url = Uri(
@@ -47,16 +47,21 @@ class MyAppDrawer extends StatelessWidget {
   // void _launchinsta() async => await canLaunch(_urlinsta.toString())
   //     ? await launch(_urlinsta.toString())
   //     : throw 'Could not launch $_urlinsta';
+
+  double appBarSize = MyAppBar().preferredSize.height;
+  var height = MediaQuery.of(Get.context).padding.top;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
+    print(appBarSize);
+    print(height);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: SizedBox(
         width: (218 / size.width) * size.width,
         child: Padding(
-          padding: EdgeInsets.only(top: (80 / size.height) * size.height),
+          padding: EdgeInsets.only(top: appBarSize + height),
           child: Drawer(
             child: Container(
               color: Color(0xff013668),
@@ -69,10 +74,13 @@ class MyAppDrawer extends StatelessWidget {
                     currentAccountPicture: CircleAvatar(
                       backgroundImage: AssetImage("assets/images/profile.png"),
                     ),
-                    accountName: Text(
-                      " اسم المستخدم",
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    accountName: Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Text(
+                        " اسم المستخدم",
+                        style:
+                            TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      ),
                     ),
                     accountEmail: SizedBox(
                       width: (218 / size.width) * size.width,
